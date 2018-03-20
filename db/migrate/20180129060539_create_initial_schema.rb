@@ -70,6 +70,7 @@ class CreateInitialSchema < ActiveRecord::Migration[5.1]
 
     # デイリーチャンピオン
     create_table :daily_champions do |t|
+      t.date :date, :date, null: false
       t.references :users, index: true, foreign_key: true
       t.integer :point, null: false
       t.timestamps null: false

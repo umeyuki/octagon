@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180129060539) do
   end
 
   create_table "daily_champions", force: :cascade do |t|
+    t.date "date", null: false
     t.integer "users_id"
     t.integer "point", null: false
     t.datetime "created_at", null: false
