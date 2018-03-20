@@ -14,9 +14,38 @@ class CreateInitialSchema < ActiveRecord::Migration[5.1]
     add_index :users, :nick_name, unique: true
 
     # 会員累計獲得ポイント
-    create_table :user_totla_points do |t|
+    create_table :user_total_records do |t|
       t.references :users, index: true, foreign_key: true
+      t.float :ranking_point, null: false
+      t.float :average_point, null: false
+      t.float :average_point_when_top, null: false
+      t.integer :match_count, null: false
+      t.integer :top_count, null: false
+      t.integer :second_count, null: false
+      t.integer :third_count, null: false
+      t.integer :fourth_count, null: false
+      t.float :top_percent, null: false
+      t.float :second_percent, null: false
+      t.float :third_percent, null: false
+      t.float :fourth_percent, null: false
       t.integer :real_points, null: false
+      t.integer :current_points, null: false
+    end
+
+    create_table :user_monthly_records do |t|
+      t.references :users, index: true, foreign_key: true
+      t.float :ranking_point, null: false
+      t.float :average_point, null: false
+      t.float :average_point_when_top, null: false
+      t.integer :match_count, null: false
+      t.integer :top_count, null: false
+      t.integer :second_count, null: false
+      t.integer :third_count, null: false
+      t.integer :fourth_count, null: false
+      t.float :top_percent, null: false
+      t.float :second_percent, null: false
+      t.float :third_percent, null: false
+      t.float :fourth_percent, null: false
       t.integer :current_points, null: false
     end
 

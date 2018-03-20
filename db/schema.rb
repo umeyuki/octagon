@@ -76,6 +76,24 @@ ActiveRecord::Schema.define(version: 20180129060539) do
     t.index ["users_id"], name: "index_user_advantage_points_on_users_id"
   end
 
+  create_table "user_monthly_records", force: :cascade do |t|
+    t.integer "users_id"
+    t.float "ranking_point", null: false
+    t.float "average_point", null: false
+    t.float "average_point_when_top", null: false
+    t.integer "match_count", null: false
+    t.integer "top_count", null: false
+    t.integer "second_count", null: false
+    t.integer "third_count", null: false
+    t.integer "fourth_count", null: false
+    t.float "top_percent", null: false
+    t.float "second_percent", null: false
+    t.float "third_percent", null: false
+    t.float "fourth_percent", null: false
+    t.integer "current_points", null: false
+    t.index ["users_id"], name: "index_user_monthly_records_on_users_id"
+  end
+
   create_table "user_scores", force: :cascade do |t|
     t.integer "scores_id"
     t.integer "users_id"
@@ -86,11 +104,23 @@ ActiveRecord::Schema.define(version: 20180129060539) do
     t.index ["users_id"], name: "index_user_scores_on_users_id"
   end
 
-  create_table "user_totla_points", force: :cascade do |t|
+  create_table "user_total_records", force: :cascade do |t|
     t.integer "users_id"
+    t.float "ranking_point", null: false
+    t.float "average_point", null: false
+    t.float "average_point_when_top", null: false
+    t.integer "match_count", null: false
+    t.integer "top_count", null: false
+    t.integer "second_count", null: false
+    t.integer "third_count", null: false
+    t.integer "fourth_count", null: false
+    t.float "top_percent", null: false
+    t.float "second_percent", null: false
+    t.float "third_percent", null: false
+    t.float "fourth_percent", null: false
     t.integer "real_points", null: false
     t.integer "current_points", null: false
-    t.index ["users_id"], name: "index_user_totla_points_on_users_id"
+    t.index ["users_id"], name: "index_user_total_records_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
