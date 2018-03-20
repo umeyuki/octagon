@@ -1,0 +1,2 @@
+class UserMonthlyRecord < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ProfessionaLeagueRanking < ApplicationRecord
+end

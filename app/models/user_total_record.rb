@@ -1,0 +1,2 @@
+class UserTotalRecord < ApplicationRecord
+end

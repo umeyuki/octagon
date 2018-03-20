@@ -1,0 +1,2 @@
+class UserAdvantagePoint < ApplicationRecord
+end
